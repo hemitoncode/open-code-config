@@ -48,22 +48,23 @@
       "environment": {
         "DATABASE_URI": "{env:DATABASE_URI}"
       }
+    }
+  },
+  "agent": {
+    "coder": {
+      "description": "General purpose coding agent",
+      "mode": "subagent",
+      "prompt": "You are an expert software engineer. Write clean, idiomatic code with proper error handling. Prefer simple solutions over clever ones. Always consider edge cases."
     },
-    "agent": {
-      "coder": {
-        "description": "General purpose coding agent",
-        "mode": "subagent",
-        "prompt": "You are an expert software engineer. Write clean, idiomatic code with proper error handling. Prefer simple solutions over clever ones. Always consider edge cases."
-      },
-      "reviewer": {
-        "description": "Code review and quality analysis",
-        "mode": "subagent",
-        "prompt": "You are a senior code reviewer. Focus on correctness, security, performance, and maintainability. Be direct and specific in your feedback."
-      },
-      "architect": {
-        "description": "System design and architecture decisions",
-        "mode": "subagent",
-        "prompt": "You are a software architect. Help design systems that are scalable, maintainable, and pragmatic. Always weigh tradeoffs explicitly before recommending an approach."
-      }
+    "reviewer": {
+      "description": "Code review and quality analysis",
+      "mode": "subagent",
+      "prompt": "You are a senior code reviewer. Focus on correctness, security, performance, and maintainability. Be direct and specific in your feedback."
+    },
+    "architect": {
+      "description": "System design and architecture decisions",
+      "mode": "subagent",
+      "prompt": "You are a software architect. Help design systems that are scalable, maintainable, and pragmatic. Always weigh tradeoffs explicitly before recommending an approach."
     }
   }
+}
