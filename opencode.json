@@ -12,12 +12,21 @@
     },
     "filesystem": {
       "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "."],
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "."
+      ],
       "enabled": true
     },
     "github": {
       "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-github"],
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
       },
@@ -25,35 +34,47 @@
     },
     "memory": {
       "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-memory"],
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
       "enabled": false
     },
     "sequential-thinking": {
       "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
       "enabled": false
     },
     "fetch": {
       "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-fetch"],
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-fetch"
+      ],
       "enabled": true
     }
   },
-  "agents": {
+  "agent": {
     "coder": {
       "description": "General purpose coding agent",
-      "system": "You are an expert software engineer. Write clean, idiomatic code with proper error handling. Prefer simple solutions over clever ones. Always consider edge cases.",
-      "model": "claude-sonnet-4-5"
+      "mode": "subagent",
+      "prompt": "You are an expert software engineer. Write clean, idiomatic code with proper error handling. Prefer simple solutions over clever ones. Always consider edge cases."
     },
     "reviewer": {
       "description": "Code review and quality analysis",
-      "system": "You are a senior code reviewer. Focus on correctness, security, performance, and maintainability. Be direct and specific in your feedback.",
-      "model": "claude-sonnet-4-5"
+      "mode": "subagent",
+      "prompt": "You are a senior code reviewer. Focus on correctness, security, performance, and maintainability. Be direct and specific in your feedback."
     },
     "architect": {
       "description": "System design and architecture decisions",
-      "system": "You are a software architect. Help design systems that are scalable, maintainable, and pragmatic. Always weigh tradeoffs explicitly before recommending an approach.",
-      "model": "claude-opus-4-5"
+      "mode": "subagent",
+      "prompt": "You are a software architect. Help design systems that are scalable, maintainable, and pragmatic. Always weigh tradeoffs explicitly before recommending an approach."
     }
   }
 }
