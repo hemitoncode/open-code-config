@@ -3,49 +3,23 @@
   "mcp": {
     "sqlite": {
       "type": "local",
-      "command": [
-        "sh",
-        "-c",
-        "uvx mcp-sqlite $(find . -maxdepth 3 -name '*.db' -o -name '*.sqlite' | head -1)"
-      ],
+      "command": ["sh", "-c", "uvx mcp-sqlite $(find . -maxdepth 3 -name '*.db' -o -name '*.sqlite' | head -1)"],
       "enabled": false
     },
     "filesystem": {
       "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "."
-      ],
+      "command": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "."],
       "enabled": true
     },
     "memory": {
       "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-memory"
-      ],
+      "command": ["npx", "-y", "@modelcontextprotocol/server-memory"],
       "enabled": false
     },
     "sequential-thinking": {
       "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ],
+      "command": ["npx", "-y", "@modelcontextprotocol/server-sequential-thinking"],
       "enabled": false
-    },
-    "fetch": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-fetch"
-      ],
-      "enabled": true
     }
   },
   "agent": {
